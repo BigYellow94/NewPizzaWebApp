@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("/home");
         } else {
             // Authentication failed, redirect to login page with an error parameter
-            response.sendRedirect("/login?error=authenticationFailed");
+            response.sendRedirect("/login?error=Authentication Failed. Incorrect mail or password, please try again.");
         }
     }
 

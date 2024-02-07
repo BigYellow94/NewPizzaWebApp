@@ -4,7 +4,7 @@
     <title>Pizza Express</title>
 </head>
 <body>
-<h1>Welcome to the Pizza Express!</h1>
+<h1>We are pleased to welcome you to our website!</h1>
 <p>Only registered users can place an order, please sign in.</p>
 <form action="/login" method="get">
     <button type="submit">Sign Up</button>
