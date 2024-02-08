@@ -1,3 +1,5 @@
+package DataBaseConnection;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,7 +13,8 @@ public class MySqlConnector {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException("MySQL JDBC Driver not found", e);
+            System.err.println("Exception occurred during database connection initialization:");
+            throw new RuntimeException("Failed to initialize database connection.", e);
         }
     }
 
@@ -20,6 +23,8 @@ public class MySqlConnector {
     static {
         try {
             connection = DriverManager.getConnection(JDBC_URL, MYSQL_USERNAME, MYSQL_PASSWORD);
+            System.out.println("Database connection established successfully.");
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -1,3 +1,5 @@
+import DataBaseConnection.MySqlConnector;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -11,7 +13,6 @@ import java.sql.SQLException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Pass an error message to the login page if available
         String errorMessage = request.getParameter("error");
         request.setAttribute("errorMessage", errorMessage);
 
@@ -24,18 +25,8 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         if (authenticateUser(email, password)) {
-
-            HttpSession session = request.getSession();
-
-
-            String username = getUsernameByEmail(email);
-
-
-            session.setAttribute("username", username);
-
             response.sendRedirect("/home");
         } else {
-
             response.sendRedirect("/login?error=Authentication Failed. Incorrect email or password, please try again.");
         }
     }
@@ -55,23 +46,5 @@ public class LoginServlet extends HttpServlet {
             e.printStackTrace();
             return false;
         }
-    }
-
-    private String getUsernameByEmail(String email) {
-        try (Connection connection = MySqlConnector.getConnection()) {
-            String query = "SELECT username FROM clients_data WHERE email = ?";
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setString(1, email);
-
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    if (resultSet.next()) {
-                        return resultSet.getString("username");
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 }

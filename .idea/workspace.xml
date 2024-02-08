@@ -9,11 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="425d372b-f8f8-43a7-8e3d-22b4e434f1ba" name="Changes" comment="Initial commit">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c927a86-d05a-4b0f-a4bf-c54bf059cda5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8c927a86-d05a-4b0f-a4bf-c54bf059cda5.xml" afterDir="false" />
+    <list default="true" id="425d372b-f8f8-43a7-8e3d-22b4e434f1ba" name="Changes" comment="Some Minor changes">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/IngredientServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/OrderingServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ingredients.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ordering.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MySqlConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBaseConnection/MySqlConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +30,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Jsp File" />
         <option value="Servlet" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -57,7 +63,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Tomcat Server.Tomcat 9.0.852.executor": "Run",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Program Files/Java/mysql-connector-j-8.1.0.jar",
+    "last_opened_file_path": "C:/Users/Lenovo/IdeaProjects/NewPizzaWebApp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -191,6 +197,8 @@
       <workItem from="1707323152686" duration="3150000" />
       <workItem from="1707326361382" duration="3150000" />
       <workItem from="1707382533129" duration="6787000" />
+      <workItem from="1707399899299" duration="17000" />
+      <workItem from="1707400364773" duration="6617000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />

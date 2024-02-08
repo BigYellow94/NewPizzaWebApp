@@ -6,7 +6,7 @@
 <body>
 <h2>Login to Pizza Express</h2>
 
-<%-- Check for error message and display it --%>
+
 <% if (request.getAttribute("errorMessage") != null) { %>
 <p style="color: red;"><%= request.getAttribute("errorMessage") %></p>
 <% } %>

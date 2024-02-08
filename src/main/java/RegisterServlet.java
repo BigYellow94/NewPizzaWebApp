@@ -1,3 +1,5 @@
+import DataBaseConnection.MySqlConnector;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -51,7 +53,6 @@ public class RegisterServlet extends HttpServlet {
             response.sendRedirect("/register?error=databaseError");
             return;
         }
-
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
 }
