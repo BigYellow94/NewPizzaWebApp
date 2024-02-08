@@ -49,7 +49,7 @@
     <button type="submit">Place Order</button>
 </form>
 
-<form action="/ordering" method="get">
+<form action="/pizzamenu" method="get">
     <button type="submit">Go Back</button>
 </form>
 </body>

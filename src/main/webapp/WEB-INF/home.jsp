@@ -7,7 +7,7 @@
 <h2>You are welcome on Pizza Express!</h2>
 <p>Would you like to make an order?</p>
 
-<form action="/ordering" method="get">
+<form action="/pizzamenu" method="get">
     <button type="submit">Make an order</button>
 </form>
 

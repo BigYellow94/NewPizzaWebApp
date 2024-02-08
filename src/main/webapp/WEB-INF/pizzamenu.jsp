@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>Available Pizzas</h1>
-<form action="/ordering" method="post">
+<form action="/pizzamenu" method="post">
     <table border="1">
         <tr>
             <th>ID</th>
@@ -49,7 +49,7 @@
     <button type="submit">Add Extra Ingredients</button>
 </form>
 
-<form action="/confirmOrder" method="post">
+<form action="/ordersubmission" method="post">
     <button type="submit">Place Order</button>
 </form>
 
