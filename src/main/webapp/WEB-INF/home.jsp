@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <html>
 <head>
-    <title>Welcome to Pizza Express</title>
+    <title>Home page - Pizza Express</title>
 </head>
 <body>
 <h2>You are welcome on Pizza Express!</h2>
@@ -12,7 +12,9 @@
 </form>
 
 <form action="/logout" method="post">
-    <button type="submit">Exit</button>
+    <button type="submit">Logout</button>
 </form>
+
 </body>
 </html>
+

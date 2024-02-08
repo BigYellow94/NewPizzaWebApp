@@ -13,10 +13,16 @@ import java.sql.SQLException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String errorMessage = request.getParameter("error");
-        request.setAttribute("errorMessage", errorMessage);
-
-        request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+        HttpSession session = request.getSession(false);
+        if (session != null && session.getAttribute("user") != null) {
+            // Если пользователь уже аутентифицирован, перенаправляем его на домашнюю страницу
+            response.sendRedirect("/home");
+        } else {
+            // Иначе, показываем страницу входа
+            String errorMessage = request.getParameter("error");
+            request.setAttribute("errorMessage", errorMessage);
+            request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+        }
     }
 
     @Override
@@ -26,8 +32,12 @@ public class LoginServlet extends HttpServlet {
 
         try {
             if (authenticateUser(email, password)) {
+                // Если аутентификация успешна, сохраняем пользователя в сессии и перенаправляем на домашнюю страницу
+                HttpSession session = request.getSession();
+                session.setAttribute("user", email);
                 response.sendRedirect("/home");
             } else {
+                // Иначе, перенаправляем обратно на страницу входа с сообщением об ошибке
                 response.sendRedirect("/login?error=Authentication Failed. Incorrect email or password, please try again.");
             }
         } catch (SQLException e) {

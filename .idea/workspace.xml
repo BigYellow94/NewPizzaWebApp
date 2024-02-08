@@ -9,13 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="425d372b-f8f8-43a7-8e3d-22b4e434f1ba" name="Changes" comment="Modified the DB connector by Apache DBCP">
+    <list default="true" id="425d372b-f8f8-43a7-8e3d-22b4e434f1ba" name="Changes" comment="Added checkboxes and some other changes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/AccessFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LogoutServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBaseConnection/MySqlConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBaseConnection/MySqlConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/IngredientServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/IngredientServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PizzaMenuServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PizzaMenuServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ingredients.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ingredients.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pizzamenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pizzamenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Servlet" />
         <option value="Jsp File" />
+        <option value="Servlet" />
       </list>
     </option>
   </component>
@@ -194,7 +195,7 @@
       <workItem from="1707326361382" duration="3150000" />
       <workItem from="1707382533129" duration="6787000" />
       <workItem from="1707399899299" duration="17000" />
-      <workItem from="1707400364773" duration="21449000" />
+      <workItem from="1707400364773" duration="24697000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -228,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707418009500</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added checkboxes and some other changes">
+      <option name="closed" value="true" />
+      <created>1707424097300</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707424097300</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +259,7 @@
     <MESSAGE value="Added pizza menu and ingredients menu some changes" />
     <MESSAGE value="Some minor changes" />
     <MESSAGE value="Modified the DB connector by Apache DBCP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified the DB connector by Apache DBCP" />
+    <MESSAGE value="Added checkboxes and some other changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checkboxes and some other changes" />
   </component>
 </project>

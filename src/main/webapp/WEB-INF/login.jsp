@@ -1,10 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <html>
 <head>
-  <title>Login - Pizza Express</title>
+  <title>Main Login Page - Pizza Express</title>
 </head>
 <body>
-<h2>Login to Pizza Express</h2>
+<h1>We are pleased to welcome you to our website!</h1>
+<p>Only registered users can place an order, please sign in.</p>
 
 
 <% if (request.getAttribute("errorMessage") != null) { %>
