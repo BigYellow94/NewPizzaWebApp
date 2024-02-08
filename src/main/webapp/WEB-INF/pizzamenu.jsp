@@ -1,7 +1,6 @@
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ page import="DataBaseConnection.MySqlConnector" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -16,11 +15,12 @@
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
+            <th>Select</th>
         </tr>
 
         <%
             try {
-                Statement statement = MySqlConnector.getConnection().createStatement();
+                Statement statement = DataBaseConnection.MySqlConnector.getConnection().createStatement();
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM pizza_types");
 
                 while (resultSet.next()) {
@@ -33,6 +33,7 @@
             <td><%= name %></td>
             <td><%= price %></td>
             <td><input type="number" name="quantity_<%= id %>" value="0" min="0"></td>
+            <td><input type="checkbox" name="selected_pizzas" value="<%= id %>"></td>
         </tr>
         <%
                 }
@@ -43,13 +44,14 @@
             }
         %>
     </table>
+
 </form>
 
 <form action="/ingredients" method="get">
     <button type="submit">Add Extra Ingredients</button>
 </form>
 
-<form action="/ordersubmission" method="post">
+<form action="/orderconfirmation" method="post">
     <button type="submit">Place Order</button>
 </form>
 

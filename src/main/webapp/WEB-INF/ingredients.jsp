@@ -16,6 +16,7 @@
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
+            <th>Select</th>
         </tr>
 
         <%
@@ -33,6 +34,7 @@
             <td><%= name %></td>
             <td><%= price %></td>
             <td><input type="number" name="quantity_<%= id %>" value="0" min="0"></td>
+            <td><input type="checkbox" name="selected_ingredients" value="<%= id %>"></td>
         </tr>
         <%
                 }
@@ -43,9 +45,10 @@
             }
         %>
     </table>
+
 </form>
 
-<form action="/confirmOrder" method="post">
+<form action="/orderconfirmation" method="post">
     <button type="submit">Place Order</button>
 </form>
 

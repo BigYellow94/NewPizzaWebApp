@@ -13,7 +13,7 @@ public class MySqlConnector {
         dataSource.setUrl("jdbc:mysql://localhost:3306/pizza_web_app");
         dataSource.setUsername("root");
         dataSource.setPassword("LFEcfhs094!");
-        dataSource.setMaxTotal(10); // Установите максимальное количество соединений
+        dataSource.setMaxTotal(100);
     }
 
     public static Connection getConnection() throws SQLException {
