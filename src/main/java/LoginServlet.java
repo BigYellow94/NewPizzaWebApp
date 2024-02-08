@@ -24,14 +24,19 @@ public class LoginServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        if (authenticateUser(email, password)) {
-            response.sendRedirect("/home");
-        } else {
-            response.sendRedirect("/login?error=Authentication Failed. Incorrect email or password, please try again.");
+        try {
+            if (authenticateUser(email, password)) {
+                response.sendRedirect("/home");
+            } else {
+                response.sendRedirect("/login?error=Authentication Failed. Incorrect email or password, please try again.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            response.sendRedirect("/login?error=Database Error");
         }
     }
 
-    private boolean authenticateUser(String email, String password) {
+    private boolean authenticateUser(String email, String password) throws SQLException {
         try (Connection connection = MySqlConnector.getConnection()) {
             String query = "SELECT * FROM clients_data WHERE email = ? AND password = ?";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -42,9 +47,6 @@ public class LoginServlet extends HttpServlet {
                     return resultSet.next();
                 }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
         }
     }
 }
