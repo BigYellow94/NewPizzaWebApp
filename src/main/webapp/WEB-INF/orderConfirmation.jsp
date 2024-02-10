@@ -1,3 +1,5 @@
+<%@ page import="Classes.Pizza" %>
+<%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -10,20 +12,18 @@
 <p>Your order has been received:</p>
 <ul>
     <%
-        String[] selectedPizzaNames = (String[]) request.getAttribute("selectedPizzaNames");
-        double[] selectedPizzaPrices = (double[]) request.getAttribute("selectedPizzaPrices");
+        List<Pizza> selectedPizzasList = (List<Pizza>) request.getAttribute("selectedPizzasList");
 
-        if (selectedPizzaNames != null && selectedPizzaPrices != null) {
-            for (int i = 0; i < selectedPizzaNames.length; i++) {
+        if (selectedPizzasList != null) {
+            for (Pizza pizza : selectedPizzasList) {
     %>
     <li>
-        Pizza Name: <%= selectedPizzaNames[i] %>, Price: <%= selectedPizzaPrices[i] %>
+        Pizza Name: <%= pizza.getName() %>, Quantity: <%= pizza.getQuantity() %>, Price: <%= pizza.getPrice() %>
     </li>
     <%
             }
         }
     %>
-    <!-- Здесь вы можете добавить дополнительную информацию о заказе, если это необходимо -->
 </ul>
 
 <form action="/home" method="get">

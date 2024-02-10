@@ -1,3 +1,4 @@
+import Classes.Pizza;
 import DataBaseConnection.MySqlConnector;
 
 import javax.servlet.*;
@@ -8,6 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "OrderServlet", value = "/OrderServlet")
 public class OrderServlet extends HttpServlet {
@@ -19,35 +22,30 @@ public class OrderServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Получение выбранных пицц и их количества из запроса
+
         String[] selectedPizzas = request.getParameterValues("selectedPizzas");
-        String quantityPizza1 = request.getParameter("quantity_1"); // Предполагается, что id пиццы равен 1
 
-        // Получение названия и цены каждой выбранной пиццы
-        String[] selectedPizzaNames = new String[selectedPizzas.length];
-        double[] selectedPizzaPrices = new double[selectedPizzas.length];
+        List<Pizza> selectedPizzasList = new ArrayList<>();
 
-        // Проходим по выбранным пиццам и получаем их название и цену
         for (int i = 0; i < selectedPizzas.length; i++) {
             int pizzaId = Integer.parseInt(selectedPizzas[i]);
-            // Здесь вызываем методы для получения названия и цены пиццы по ее id
+            int quantity = Integer.parseInt(request.getParameter("quantity_" + pizzaId));
+
             String pizzaName = getPizzaNameById(pizzaId);
             double pizzaPrice = getPizzaPriceById(pizzaId);
-            selectedPizzaNames[i] = pizzaName;
-            selectedPizzaPrices[i] = pizzaPrice;
-            // Вывод информации о пицце в консоль
-            System.out.println("Selected Pizza: " + pizzaName + ", Price: " + pizzaPrice);
+
+            Pizza pizza = new Pizza(pizzaId, pizzaName, pizzaPrice);
+            pizza.setQuantity(quantity);
+
+            selectedPizzasList.add(pizza);
+
+            System.out.println("Selected Pizza: " + pizzaName + ", Quantity: " + quantity + ", Price: " + pizzaPrice);
         }
 
-        // Дополнительная обработка данных о заказе (например, сохранение в базе данных или передача другому компоненту)
-
-        // Перенаправление пользователя на другую страницу или вывод подтверждения заказа
-        request.setAttribute("selectedPizzaNames", selectedPizzaNames);
-        request.setAttribute("selectedPizzaPrices", selectedPizzaPrices);
+        request.setAttribute("selectedPizzasList", selectedPizzasList);
         request.getRequestDispatcher("/WEB-INF/orderConfirmation.jsp").forward(request, response);
     }
 
-    // Метод для получения названия пиццы по ее идентификатору
     private String getPizzaNameById(int pizzaId) {
         String pizzaName = null;
         try (Connection connection = MySqlConnector.getConnection()) {
@@ -66,7 +64,6 @@ public class OrderServlet extends HttpServlet {
         return pizzaName;
     }
 
-    // Метод для получения цены пиццы по ее идентификатору
     private double getPizzaPriceById(int pizzaId) {
         double pizzaPrice = 0.0;
         try (Connection connection = MySqlConnector.getConnection()) {
