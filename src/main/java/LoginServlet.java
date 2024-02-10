@@ -32,12 +32,12 @@ public class LoginServlet extends HttpServlet {
 
         try {
             if (authenticateUser(email, password)) {
-                // Если аутентификация успешна, сохраняем пользователя в сессии и перенаправляем на домашнюю страницу
+
                 HttpSession session = request.getSession();
                 session.setAttribute("user", email);
                 response.sendRedirect("/home");
             } else {
-                // Иначе, перенаправляем обратно на страницу входа с сообщением об ошибке
+
                 response.sendRedirect("/login?error=Authentication Failed. Incorrect email or password, please try again.");
             }
         } catch (SQLException e) {

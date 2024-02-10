@@ -7,7 +7,7 @@ import java.io.IOException;
 
 @WebFilter("/*")
 public class AccessFilter implements Filter {
-    private static final String[] allowedURLs = {"/login", "/register", "/index.jsp"};
+    private static final String[] allowedURLs = {"/login", "/register"};
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -24,10 +24,10 @@ public class AccessFilter implements Filter {
         } else {
             HttpSession session = httpRequest.getSession(false);
             if (session != null && session.getAttribute("user") != null) {
-                // Пользователь аутентифицирован, разрешаем доступ к странице
+
                 chain.doFilter(request, response);
             } else {
-                // Пользователь не аутентифицирован, перенаправляем на страницу входа
+                
                 httpResponse.sendRedirect(httpRequest.getContextPath() + "/login");
             }
         }

@@ -15,8 +15,8 @@ public class LogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         if (session != null) {
-            session.invalidate(); // Завершение текущей сессии
+            session.invalidate();
         }
-        response.sendRedirect("/login"); // Перенаправление на страницу входа
+        response.sendRedirect("/login");
     }
 }
