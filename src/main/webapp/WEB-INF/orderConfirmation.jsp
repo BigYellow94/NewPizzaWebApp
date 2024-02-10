@@ -26,6 +26,8 @@
     %>
 </ul>
 
+<p>Total Order Price: <%= request.getAttribute("totalOrderPrice") %></p>
+
 <form action="/home" method="get">
     <button type="submit">Back to Home</button>
 </form>

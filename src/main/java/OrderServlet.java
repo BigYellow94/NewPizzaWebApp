@@ -39,10 +39,13 @@ public class OrderServlet extends HttpServlet {
 
             selectedPizzasList.add(pizza);
 
-            System.out.println("Selected Pizza: " + pizzaName + ", Quantity: " + quantity + ", Price: " + pizzaPrice);
         }
 
+        // Расчет общей суммы заказа
+        double totalOrderPrice = calculateTotalOrderPrice(selectedPizzasList);
+
         request.setAttribute("selectedPizzasList", selectedPizzasList);
+        request.setAttribute("totalOrderPrice", totalOrderPrice);
         request.getRequestDispatcher("/WEB-INF/orderConfirmation.jsp").forward(request, response);
     }
 
@@ -80,5 +83,13 @@ public class OrderServlet extends HttpServlet {
             e.printStackTrace();
         }
         return pizzaPrice;
+    }
+
+    private double calculateTotalOrderPrice(List<Pizza> selectedPizzasList) {
+        double totalOrderPrice = 0.0;
+        for (Pizza pizza : selectedPizzasList) {
+            totalOrderPrice += pizza.getPrice() * pizza.getQuantity();
+        }
+        return totalOrderPrice;
     }
 }

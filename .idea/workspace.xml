@@ -9,8 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="425d372b-f8f8-43a7-8e3d-22b4e434f1ba" name="Changes" comment="Integration of the working version of the menu">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Pizza.java" afterDir="false" />
+    <list default="true" id="425d372b-f8f8-43a7-8e3d-22b4e434f1ba" name="Changes" comment="Added Quantity Viewing Method">
       <change beforePath="$PROJECT_DIR$/src/main/java/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrderServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/orderConfirmation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/orderConfirmation.jsp" afterDir="false" />
     </list>
@@ -201,7 +200,7 @@
       <workItem from="1707587822916" duration="12000" />
       <workItem from="1707600652905" duration="318000" />
       <workItem from="1707601398676" duration="727000" />
-      <workItem from="1707605879381" duration="2189000" />
+      <workItem from="1707605879381" duration="2698000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -259,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707606801709</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added Quantity Viewing Method">
+      <option name="closed" value="true" />
+      <created>1707608199505</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707608199505</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,6 +291,7 @@
     <MESSAGE value="Added checkboxes and some other changes" />
     <MESSAGE value="Added AccessFilter and LogoutServlet" />
     <MESSAGE value="Integration of the working version of the menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Integration of the working version of the menu" />
+    <MESSAGE value="Added Quantity Viewing Method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Quantity Viewing Method" />
   </component>
 </project>
