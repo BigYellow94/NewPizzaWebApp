@@ -44,6 +44,8 @@ public class OrderServlet extends HttpServlet {
         // Расчет общей суммы заказа
         double totalOrderPrice = calculateTotalOrderPrice(selectedPizzasList);
 
+        insertOrderToDatabase(selectedPizzasList, totalOrderPrice);
+
         request.setAttribute("selectedPizzasList", selectedPizzasList);
         request.setAttribute("totalOrderPrice", totalOrderPrice);
         request.getRequestDispatcher("/WEB-INF/orderConfirmation.jsp").forward(request, response);
@@ -91,5 +93,23 @@ public class OrderServlet extends HttpServlet {
             totalOrderPrice += pizza.getPrice() * pizza.getQuantity();
         }
         return totalOrderPrice;
+    }
+    private void insertOrderToDatabase(List<Pizza> selectedPizzasList, double totalOrderPrice) {
+        try (Connection connection = MySqlConnector.getConnection()) {
+            StringBuilder orderDetails = new StringBuilder();
+            for (Pizza pizza : selectedPizzasList) {
+                orderDetails.append("Pizza Name: ").append(pizza.getName()).append(", Quantity: ").append(pizza.getQuantity()).append(", Price: ").append(pizza.getPrice()).append("\n");
+            }
+
+            String sql = "INSERT INTO all_orders (order_details, total_price) VALUES (?, ?)";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+
+                statement.setString(1, orderDetails.toString());
+                statement.setDouble(2, totalOrderPrice);
+                statement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
