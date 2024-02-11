@@ -7,7 +7,7 @@ import java.io.IOException;
 
 @WebFilter("/*")
 public class AccessFilter implements Filter {
-    private static final String[] allowedURLs = {"/login", "/register", "/admin", "/status", "/onlineorders"};
+    private static final String[] allowedURLs = {"/login", "/register", "/admin", "/OnlineOredersServlet", "/StatusServlet"};
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
