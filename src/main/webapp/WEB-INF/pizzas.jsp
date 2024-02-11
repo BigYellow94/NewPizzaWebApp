@@ -32,7 +32,12 @@
     <% } %>
     </tbody>
   </table>
-  <input type="submit" value="Order">
+  <input type="submit" value="Make the order">
 </form>
+
+<form action="/home" method="get">
+  <button type="submit">Back to Home</button>
+</form>
+
 </body>
 </html>

@@ -7,7 +7,7 @@ import java.io.IOException;
 
 @WebFilter("/*")
 public class AccessFilter implements Filter {
-    private static final String[] allowedURLs = {"/login", "/register"};
+    private static final String[] allowedURLs = {"/login", "/register", "/admin", "/status", "/onlineorders"};
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -24,10 +24,8 @@ public class AccessFilter implements Filter {
         } else {
             HttpSession session = httpRequest.getSession(false);
             if (session != null && session.getAttribute("user") != null) {
-
                 chain.doFilter(request, response);
             } else {
-                
                 httpResponse.sendRedirect(httpRequest.getContextPath() + "/login");
             }
         }

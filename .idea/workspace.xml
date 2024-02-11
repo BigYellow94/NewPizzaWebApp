@@ -9,7 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="425d372b-f8f8-43a7-8e3d-22b4e434f1ba" name="Changes" comment="Added Total Calculation Method">
+    <list default="true" id="425d372b-f8f8-43a7-8e3d-22b4e434f1ba" name="Changes" comment="Added admin_page, OnlineOrdersServlet">
+      <change afterPath="$PROJECT_DIR$/src/main/java/StatusServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrderServlet.java" afterDir="false" />
     </list>
@@ -22,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Servlet" />
         <option value="Jsp File" />
+        <option value="Servlet" />
       </list>
     </option>
   </component>
@@ -200,7 +201,7 @@
       <workItem from="1707587822916" duration="12000" />
       <workItem from="1707600652905" duration="318000" />
       <workItem from="1707601398676" duration="727000" />
-      <workItem from="1707605879381" duration="5401000" />
+      <workItem from="1707605879381" duration="20105000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -274,7 +275,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707608843527</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added Insert Method Into Table all_orders">
+      <option name="closed" value="true" />
+      <created>1707611446381</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707611446381</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added admin_page, OnlineOrdersServlet">
+      <option name="closed" value="true" />
+      <created>1707624325141</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707624325141</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +318,8 @@
     <MESSAGE value="Integration of the working version of the menu" />
     <MESSAGE value="Added Quantity Viewing Method" />
     <MESSAGE value="Added Total Calculation Method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Total Calculation Method" />
+    <MESSAGE value="Added Insert Method Into Table all_orders" />
+    <MESSAGE value="Added admin_page, OnlineOrdersServlet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added admin_page, OnlineOrdersServlet" />
   </component>
 </project>

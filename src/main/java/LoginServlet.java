@@ -11,6 +11,10 @@ import java.sql.SQLException;
 
 @WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+    private static final String ADMIN_EMAIL = "admin";
+    private static final String ADMIN_PASSWORD = "admin";
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
@@ -31,13 +35,17 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         try {
-            if (authenticateUser(email, password)) {
+            if (email.equals(ADMIN_EMAIL) && password.equals(ADMIN_PASSWORD)) {
+
+                HttpSession session = request.getSession();
+                session.setAttribute("user", email);
+                response.sendRedirect("/admin");
+            } else if (authenticateUser(email, password)) {
 
                 HttpSession session = request.getSession();
                 session.setAttribute("user", email);
                 response.sendRedirect("/home");
             } else {
-
                 response.sendRedirect("/login?error=Authentication Failed. Incorrect email or password, please try again.");
             }
         } catch (SQLException e) {
@@ -60,3 +68,4 @@ public class LoginServlet extends HttpServlet {
         }
     }
 }
+
