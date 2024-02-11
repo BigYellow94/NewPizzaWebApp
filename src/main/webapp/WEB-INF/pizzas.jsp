@@ -15,7 +15,7 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
-      <th>Price</th>
+      <th>Price $</th>
       <th>Select</th>
       <th>Quantity</th>
     </tr>

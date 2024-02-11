@@ -92,6 +92,8 @@ public class OrderServlet extends HttpServlet {
         for (Pizza pizza : selectedPizzasList) {
             totalOrderPrice += pizza.getPrice() * pizza.getQuantity();
         }
+
+        totalOrderPrice = Math.round(totalOrderPrice * 100.0) / 100.0;
         return totalOrderPrice;
     }
     private void insertOrderToDatabase(List<Pizza> selectedPizzasList, double totalOrderPrice) {
